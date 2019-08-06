@@ -1,0 +1,35 @@
+div {
+    height: 100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow: hidden !important;
+    background-image: url("https://1.bp.blogspot.com/-6ZUj3j3fTA0/XUmVaOMGUaI/AAAAAAAAn1M/LZ9qtCSV_BE-y8MX2BALHlSG7r3CN0qJwCLcBGAs/s1600/75016.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+iframe {
+    margin-top: 1vh;
+    width: 120vh;
+    height: 68vh;
+    position: fixed;
+    animation: rotation 10s infinite linear;
+    clip-path: circle(30% at 50% 50%);
+}
+
+@-webkit-keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+img {
+    width: 120vh;
+    height: 120vh;
+    position: fixed;
+}
