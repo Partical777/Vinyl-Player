@@ -32,3 +32,127 @@ img {
     height: 120vh;
     position: fixed;
 }
+
+
+
+
+
+
+.next {   
+    left: 25%;
+}
+.last {
+    right: 25%;
+}
+.random {
+    left: 15%;
+    top: 85%;
+}
+.loop {
+    left: 20%;
+    top: 85%;
+}
+.play {
+    right: 20%;
+    top: 85%;
+}
+.stop {
+    right: 15%;
+    top: 85%;
+}
+.button {
+    background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+    background-image: linear-gradient(top, #f4f1ee, #fff);
+    border-radius: 50%;
+    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white,
+        inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+    height: 70px;
+    margin: 0 30px 30px 0;
+    position: fixed;
+    width: 70px;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+.button:after {
+    color: #e9e6e4;
+    content: "";
+    display: block;
+    font-size: 30px;
+    height: 30px;
+    text-decoration: none;
+    text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+    position: absolute;
+    width: 30px;
+}
+.next:after {
+    content: "◀";
+    left: 21px;
+    top: 20px;
+    color: #00ff9f;
+    text-shadow: 0px 0px 6px #00ff9f;
+}
+
+.last:after {
+    content: "►";
+    left: 23px;
+    top: 20px;
+    color: #00ff9f;
+    text-shadow: 0px 0px 6px #00ff9f;
+}
+.random:after {
+    content: "⤭";
+    left: 25px;
+    top: 20px;
+    color: #00ff9f;
+    text-shadow: 0px 0px 6px #00ff9f;
+}
+
+.loop:after {
+    content: "⇄";
+    left: 23px;
+    top: 2px;
+    color: #00ff9f;
+    text-shadow: 0px 0px 6px #00ff9f;
+}
+.play:after {
+    content: "►";
+    left: 23px;
+    top: 20px;
+    color: #00ff9f;
+    text-shadow: 0px 0px 6px #00ff9f;
+}
+
+.stop:after {
+    content: "S";
+    left: 27px;
+    top: 20px;
+    color: #00ff9f;
+    text-shadow: 0px 0px 6px #00ff9f;
+}
+.button:hover {
+    background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
+    background-image: linear-gradient(top, #fff, #f4f1ee);
+    color: #0088cc;
+}
+
+.next:hover:after {
+    /* color: #00ff9f;
+    text-shadow: 0px 0px 6px #00ff9f; */
+}
+
+.last:hover:after {
+    /* color: #00ff9f;
+    text-shadow: 0px 0px 6px #00ff9f; */
+}
+.button:active {
+    background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
+    background-image: linear-gradient(top, #efedec, #f7f4f4);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4),
+        inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+}
+
+.button:active:after {
+    color: #dbd2d2;
+    text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+}
