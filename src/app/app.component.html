@@ -9,13 +9,14 @@
 
   <img 
   id="img" src="https://1.bp.blogspot.com/-IJc3LzR4a8I/XUpbDn095nI/AAAAAAAAn14/CuxD4Bpq7qETjKFkfY_GQXyMngXeK-LawCLcBGAs/s1600/bottom.png"/>
-  <iframe
+  <!-- <iframe
     id="yt1"
     [src]="sanitizer.bypassSecurityTrustResourceUrl(PlaylistURL)"
     frameborder="0"
     allow="autoplay; encrypted-media"
     allowfullscreen
-  ></iframe>
+  ></iframe> -->
+  
   <img 
   id="img" src="https://1.bp.blogspot.com/-VGQJBdRfkqs/XUpbDmdkqBI/AAAAAAAAn10/61UaWi8g84c0bdPQ4jtpdL4YuFWhZWegQCLcBGAs/s1600/core.png"/>
   <img 
@@ -29,6 +30,6 @@
   <a href="#" class="button random" (click)="shuffle = !shuffle;GenerateURL()"></a>
   <a href="#" class="button loop" (click)="loop = !loop;GenerateURL()"></a>
 
-  <a href="#" id="play-button" class="button play"></a>
-  <a href="#" id="pause-button" class="button stop"></a>
+  <a href="#" id="play-button" class="button play" (click)="playVideo()"></a>
+  <a href="#" id="pause-button" class="button stop" (click)="pauseVideo()"></a>
 </div>

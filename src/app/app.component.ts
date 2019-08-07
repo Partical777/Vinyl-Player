@@ -39,6 +39,14 @@ export class AppComponent  {
   onPlayerReady(event) {
     event.target.playVideo();
   }
+  
+  playVideo() {
+    this.player.playVideo();
+  }
+
+  pauseVideo() {
+    this.player.pauseVideo();
+  }
 
 
   index = 0;
