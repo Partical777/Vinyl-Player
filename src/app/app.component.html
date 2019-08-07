@@ -1,11 +1,16 @@
 <div>
   <!-- Playlist Iframe -->
   <!-- https://www.youtube.com/embed/ VIDEO_ID /videoseries?list=PLAYLIST_ID -->
+  <span>
+    Playlist
+    <input [value]="Playlist" (keyup.enter)="Playlist = $event.target.value;GenerateURL()">
+  </span>
+
   <img 
   id="img" src="https://1.bp.blogspot.com/-IJc3LzR4a8I/XUpbDn095nI/AAAAAAAAn14/CuxD4Bpq7qETjKFkfY_GQXyMngXeK-LawCLcBGAs/s1600/bottom.png"/>
   <iframe
     id="yt1"
-    src="https://www.youtube.com/embed/videoseries?list=PLxySa8Rx-er_crWm9uz9ETLVrPMpFBuX8&index=77&autoplay=0&loop=1&cc_load_policy=0&controls=0&iv_load_policy=3&modestbranding=1&showinfo=0&autohide=1"
+    [src]="sanitizer.bypassSecurityTrustResourceUrl(PlaylistURL)"
     frameborder="0"
     allow="autoplay; encrypted-media"
     allowfullscreen
