@@ -42,6 +42,7 @@ span{
   z-index: 2;
   position: fixed;
   font-size: 2em;
+  color: #00ff9f;
 }
 
 input{
@@ -151,14 +152,33 @@ input{
 }
 
 .next:hover:after {
-    /* color: #00ff9f;
-    text-shadow: 0px 0px 6px #00ff9f; */
+    color: #00ff9f;
+    text-shadow: 0px 0px 20px #00ff9f;
+}
+.last:hover:after {
+    color: #00ff9f;
+    text-shadow: 0px 0px 20px #00ff9f;
+}
+.random:hover:after {
+    color: #00ff9f;
+    text-shadow: 0px 0px 20px #00ff9f;
+}
+.loop:hover:after {
+    color: #00ff9f;
+    text-shadow: 0px 0px 20px #00ff9f;
+}
+.play:hover:after {
+    color: #00ff9f;
+    text-shadow: 0px 0px 20px #00ff9f;
+}
+.stop:hover:after {
+    color: #00ff9f;
+    text-shadow: 0px 0px 20px #00ff9f;
 }
 
-.last:hover:after {
-    /* color: #00ff9f;
-    text-shadow: 0px 0px 6px #00ff9f; */
-}
+
+
+
 .button:active {
     background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
     background-image: linear-gradient(top, #efedec, #f7f4f4);

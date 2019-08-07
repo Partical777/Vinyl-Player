@@ -25,9 +25,9 @@
   <a href="#" class="button next"></a>
   <a href="#" class="button last"></a>
 
-  <a href="#" class="button random"></a>
-  <a href="#" class="button loop"></a>
+  <a href="#" class="button random" (click)="shuffle = !shuffle;GenerateURL()"></a>
+  <a href="#" class="button loop" (click)="loop = !loop;GenerateURL()"></a>
 
-  <a href="#" class="button play"></a>
-  <a href="#" class="button stop"></a>
+  <a href="#" id="play-button" class="button play"></a>
+  <a href="#" id="pause-button" class="button stop"></a>
 </div>
