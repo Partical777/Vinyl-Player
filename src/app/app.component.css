@@ -10,13 +10,13 @@ div {
     background-size: cover;
 }
 
-iframe {
+/* iframe {
     width: 120vh;
     height: 68vh;
     position: fixed;
     animation: rotation 10s infinite linear;
     clip-path: circle(30% at 50% 50%);
-}
+} */
 
 @-webkit-keyframes rotation {
     from {
@@ -71,10 +71,10 @@ input{
 
 
 .next {   
-    left: 15%;
+    right: 15%;
 }
 .last {
-    right: 15%;
+    left: 15%;
 }
 .random {
     left: 12.5%;
@@ -118,7 +118,7 @@ input{
     width: 30px;
 }
 .next:after {
-    content: "◀";
+    content: "►";
     left: 21px;
     top: 20px;
     color: #00ff9f;
@@ -126,7 +126,7 @@ input{
 }
 
 .last:after {
-    content: "►";
+    content: "◀";
     left: 23px;
     top: 20px;
     color: #00ff9f;

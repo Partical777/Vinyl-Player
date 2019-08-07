@@ -23,6 +23,7 @@ export class AppComponent  {
   ngOnInit() {
     (<any>window).onYouTubeIframeAPIReady = () => {
       this.player = new (<any>window).YT.Player('player', {
+        border: '5px solid red',
         height: '390',
         width: '640',
         videoId: 'SQorLsOiu34',
@@ -38,7 +39,13 @@ export class AppComponent  {
 
   onPlayerReady(event) {
     event.target.playVideo();
+    document.getElementById('player').style.width = "120vh";
+    document.getElementById('player').style.height = "68vh";
+    document.getElementById('player').style.position = "fixed";
+    document.getElementById('player').style.clipPath = "circle(30% at 50% 50%)";
+    document.getElementById('player').style.animation = "rotation 10s infinite linear";
   }
+  
   
   playVideo() {
     this.player.playVideo();
@@ -48,7 +55,7 @@ export class AppComponent  {
     this.player.pauseVideo();
   }
 
-
+  //===============================
   index = 0;
   
   loop = true;
