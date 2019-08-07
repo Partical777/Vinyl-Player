@@ -35,14 +35,14 @@ img {
 
 .arm-image{
   transform-origin: 80% 30%;
-  animation: rotation2 180s infinite linear;
+  animation: rotation2 18 0s infinite linear;
 }
 
 @-webkit-keyframes rotation2 {
     0% {
         transform: rotate(0deg);
     }
-    95% {
+    99% {
         transform: rotate(35deg);
     }
     100% {
