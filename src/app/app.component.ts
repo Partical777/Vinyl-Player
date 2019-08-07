@@ -10,6 +10,37 @@ export class AppComponent  {
 
   constructor(public sanitizer: DomSanitizer){}
 
+  player;
+
+  ngAfterViewInit() {
+    const doc = (<any>window).document;
+    let playerApiScript = doc.createElement('script');
+    playerApiScript.type = 'text/javascript';
+    playerApiScript.src = 'https://www.youtube.com/iframe_api';
+    doc.body.appendChild(playerApiScript);
+  }
+
+  ngOnInit() {
+    (<any>window).onYouTubeIframeAPIReady = () => {
+      this.player = new (<any>window).YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: 'SQorLsOiu34',
+        playerVars: {'autoplay': 1, 'controls': 2},
+        events: {
+          'onReady': this.onPlayerReady,
+          'onStateChange': () => {
+          }
+        }
+      });
+    };
+  }
+
+  onPlayerReady(event) {
+    event.target.playVideo();
+  }
+
+
   index = 0;
   
   loop = true;
