@@ -33,6 +33,23 @@ img {
     position: fixed;
 }
 
+.arm-image{
+  transform-origin: 80% 30%;
+  animation: rotation2 180s infinite linear;
+}
+
+@-webkit-keyframes rotation2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    95% {
+        transform: rotate(35deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 
 
 
