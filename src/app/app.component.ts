@@ -51,8 +51,7 @@ export class AppComponent  {
           },
         events: {
           'onReady': this.onPlayerReady,
-          'onStateChange': () => {
-          }
+          'onStateChange': this.onPlayerStateChange
         }
       });
     };
@@ -69,7 +68,18 @@ export class AppComponent  {
     document.getElementById('player').style.clipPath = "circle(30% at 50% 50%)";
     document.getElementById('player').style.animation = "rotation 10s infinite linear";
   }
+
   
+  onPlayerStateChange(event) {
+    if (event.data == -1) {
+      //when music started, load the duration to animation of arm
+      document.getElementById('arm-image').style.animation = "rotation2 " + event.target.getDuration() + "s infinite linear";
+    }
+  }
+  
+
+
+
   
   playVideo() {
     this.player.playVideo();
