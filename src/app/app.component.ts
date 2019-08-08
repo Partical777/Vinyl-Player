@@ -14,6 +14,7 @@ export class AppComponent  {
   player;
   subscription: Subscription;
 
+  playing = true;
   loop = true;
   shuffle = false;
 
@@ -82,11 +83,13 @@ export class AppComponent  {
   
   playVideo() {
     this.player.playVideo();
+    this.playing = true;
     document.getElementById('player').style.animationPlayState = "running";
     document.getElementById('arm-image').style.animationPlayState = "running";
   }
 
   pauseVideo() {
+    this.playing = false;
     this.player.pauseVideo();
     document.getElementById('player').style.animationPlayState = "paused";
     document.getElementById('arm-image').style.animationPlayState = "paused";
@@ -94,10 +97,26 @@ export class AppComponent  {
 
   nextVideo() {
     this.player.nextVideo();
+    document.getElementById('nextIcon').style.animation = "shine 1.0s 3 ease-in";
+    document.getElementById('nextIcon').addEventListener('webkitAnimationEnd', function(){
+        this.style.webkitAnimationName = '';
+    }, false)
+
+    if(!this.playing){
+      this.playVideo();
+    }
   }
 
   previousVideo() {
     this.player.previousVideo();
+    document.getElementById('lastIcon').style.animation = "shine 1.0s 3 ease-in";
+    document.getElementById('nextIcon').addEventListener('webkitAnimationEnd', function(){
+        this.style.webkitAnimationName = '';
+    }, false)
+
+    if(!this.playing){
+      this.playVideo();
+    }
   }
 
   loopSet() {

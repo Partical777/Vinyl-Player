@@ -106,7 +106,12 @@ input{
     transition: all 0.1s linear;
 }
 
-.button:after {
+::ng-deep .mat-icon{
+    height:22.5px !important;
+    width:45px !important;
+    font-size:45px !important;
+}
+/* .button:after {
     color: #e9e6e4;
     content: "";
     display: block;
@@ -116,59 +121,41 @@ input{
     text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
     position: absolute;
     width: 30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 .next:after {
-    content: "►";
-    left: 21px;
-    top: 20px;
     color: #00ff9f;
     text-shadow: 0px 0px 6px #00ff9f;
 }
-
 .last:after {
-    content: "◀";
-    left: 23px;
-    top: 20px;
     color: #00ff9f;
     text-shadow: 0px 0px 6px #00ff9f;
 }
 .random:after {
-    content: "⤭";
-    left: 25px;
-    top: 20px;
     color: #00ff9f;
     text-shadow: 0px 0px 6px #00ff9f;
 }
-
 .loop:after {
-    content: "⇄";
-    left: 23px;
-    top: 19px;
     color: #00ff9f;
     text-shadow: 0px 0px 6px #00ff9f;
 }
 .play:after {
-    content: "►";
-    left: 23px;
-    top: 20px;
     color: #00ff9f;
     text-shadow: 0px 0px 6px #00ff9f;
 }
-
 .stop:after {
-    content: "S";
-    left: 27px;
-    top: 20px;
     color: #00ff9f;
     text-shadow: 0px 0px 6px #00ff9f;
-}
+} */
 .button:hover {
     background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
     background-image: linear-gradient(top, #fff, #f4f1ee);
     color: #0088cc;
 }
 
-.next:hover:after {
+/* .next:hover:after {
     color: #00ff9f;
     text-shadow: 0px 0px 20px #00ff9f;
 }
@@ -191,7 +178,7 @@ input{
 .stop:hover:after {
     color: #00ff9f;
     text-shadow: 0px 0px 20px #00ff9f;
-}
+} */
 
 
 
@@ -203,18 +190,37 @@ input{
         inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
 }
 
-.button:active:after {
+/* .button:active:after {
     color: #dbd2d2;
     text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+} */
+
+.next mat-icon:active{
+    color:#00ff9f;
+    text-shadow: 0px 0px 6px #00ff9f;
+}
+
+.last mat-icon:active{
+    color:#00ff9f;
+    text-shadow: 0px 0px 6px #00ff9f;
 }
 
 
 
+@-webkit-keyframes shine {
+    0% {
+        color:#00ff9f;
+        text-shadow: 0px 0px 6px #00ff9f;
+    }
+    100% {
+        color:#000000;
+        text-shadow: 0px 0px 0px #00ff9f;
+    }
+}
+
 
 
 /* Slider */
-
-
 .sliderDutation {
   position: absolute;
   -webkit-appearance: none;

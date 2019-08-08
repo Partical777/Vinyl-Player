@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
 <div>
   <!-- Playlist Iframe -->
   <!-- https://www.youtube.com/embed/ VIDEO_ID /videoseries?list=PLAYLIST_ID -->
@@ -20,14 +21,32 @@
   <div id="video-placeholder"></div>
 
 
-  <a href="#" class="button next" (click)="nextVideo()"></a>
-  <a href="#" class="button last" (click)="previousVideo()"></a>
 
-  <a href="#" class="button random" (click)="shuffleSet()"></a>
-  <a href="#" class="button loop" (click)="loopSet()"></a>
+  <button mat-icon-button  class="button next" (click)="nextVideo()">
+    <mat-icon id="nextIcon">skip_next</mat-icon>
+  </button>
+  
+  <button mat-icon-button  class="button last" (click)="previousVideo()">
+    <mat-icon id="lastIcon">skip_previous</mat-icon>
+  </button>
 
-  <a href="#" id="play-button" class="button play" (click)="playVideo()"></a>
-  <a href="#" id="pause-button" class="button stop" (click)="pauseVideo()"></a>
+  <button mat-icon-button  class="button random" (click)="shuffleSet()">
+    <mat-icon [style.color]="shuffle ? '#00ff9f' : '#000000'"
+              [style.text-shadow]="shuffle ? '0px 0px 6px #00ff9f' : '0px 0px 0px #00ff9f'">shuffle</mat-icon>
+  </button>
+  <button mat-icon-button  class="button loop" (click)="loopSet()">
+    <mat-icon [style.color]="loop ? '#00ff9f' : '#000000'"
+              [style.text-shadow]="loop ? '0px 0px 6px #00ff9f' : '0px 0px 0px #00ff9f'">repeat</mat-icon>
+  </button>
+
+  <button mat-icon-button  id="play-button" class="button play" (click)="playVideo()">
+    <mat-icon [style.color]="playing ? '#00ff9f' : '#000000'"
+              [style.text-shadow]="playing ? '0px 0px 6px #00ff9f' : '0px 0px 0px #00ff9f'">play_arrow</mat-icon>
+  </button>
+  <button mat-icon-button  id="pause-button" class="button stop" (click)="pauseVideo()">
+    <mat-icon [style.color]="!playing ? '#00ff9f' : '#000000'"
+              [style.text-shadow]="!playing ? '0px 0px 6px #00ff9f' : '0px 0px 0px #00ff9f'">pause</mat-icon>
+  </button>
 
 
   <input type="range" min="1" max="100" [(ngModel)]="time" class="sliderDutation" (ngModelChange)="changeCurrentTime(time)">
