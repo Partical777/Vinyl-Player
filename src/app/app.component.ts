@@ -56,7 +56,7 @@ export class AppComponent  {
       });
     };
 
-    const source = interval(1500);
+    const source = interval(2000);
     this.subscription = source.subscribe(val => this.getTimeTimely());
   }
 
@@ -72,9 +72,7 @@ export class AppComponent  {
   
   onPlayerStateChange(event) {
     if (event.data == -1) {
-      //when music started, load the duration to animation of arm
-      document.getElementById('arm-image').style.transform = "rotate(0deg)";
-      document.getElementById('arm-image').style.animation = "rotation2 " + event.target.getDuration() + "s infinite linear";
+      
     }
   }
   
