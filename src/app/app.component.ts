@@ -56,7 +56,7 @@ export class AppComponent  {
       });
     };
 
-    const source = interval(1000);
+    const source = interval(100);
     this.subscription = source.subscribe(val => this.getTimeTimely());
   }
 
@@ -73,6 +73,7 @@ export class AppComponent  {
   onPlayerStateChange(event) {
     if (event.data == -1) {
       //when music started, load the duration to animation of arm
+      document.getElementById('arm-image').style.transform = "rotate(0deg)";
       document.getElementById('arm-image').style.animation = "rotation2 " + event.target.getDuration() + "s infinite linear";
     }
   }
@@ -84,11 +85,13 @@ export class AppComponent  {
   playVideo() {
     this.player.playVideo();
     document.getElementById('player').style.animationPlayState = "running";
+    document.getElementById('arm-image').style.animationPlayState = "running";
   }
 
   pauseVideo() {
     this.player.pauseVideo();
     document.getElementById('player').style.animationPlayState = "paused";
+    document.getElementById('arm-image').style.animationPlayState = "paused";
   }
 
   nextVideo() {
@@ -121,6 +124,8 @@ export class AppComponent  {
     this.player.seekTo(time / 100 * this.player.getDuration());
     this.time = this.player.getCurrentTime()/this.player.getDuration()*100;
     console.log(this.player.getCurrentTime()/this.player.getDuration()*100);
+
+    document.getElementById('arm-image').style.animationDelay = "-" + this.player.getCurrentTime() + "s";
   }
   
 }
