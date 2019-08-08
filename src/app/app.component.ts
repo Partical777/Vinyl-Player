@@ -56,7 +56,7 @@ export class AppComponent  {
       });
     };
 
-    const source = interval(100);
+    const source = interval(1500);
     this.subscription = source.subscribe(val => this.getTimeTimely());
   }
 
