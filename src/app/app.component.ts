@@ -13,9 +13,9 @@ export class AppComponent  {
   player;
 
   loop = true;
-
   shuffle = false;
 
+  volumn = 50;
 
 
   ngAfterViewInit() {
@@ -81,6 +81,10 @@ export class AppComponent  {
   shuffleSet() {
     this.shuffle = !this.shuffle;
     this.player.setShuffle(this.shuffle);
+  }
+
+  changeVolumn() {
+    this.player.setVolume(this.volumn);
   }
 
   //===============================
