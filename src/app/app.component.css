@@ -35,7 +35,7 @@ img {
 
 .arm-image{
   transform-origin: 80% 30%;
-  animation: rotation2 18 0s infinite linear;
+  animation: rotation2 180s infinite linear;
 }
 
 @-webkit-keyframes rotation2 {

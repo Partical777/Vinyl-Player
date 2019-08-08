@@ -12,6 +12,12 @@ export class AppComponent  {
 
   player;
 
+  loop = true;
+
+  shuffle = false;
+
+
+
   ngAfterViewInit() {
     const doc = (<any>window).document;
     let playerApiScript = doc.createElement('script');
@@ -26,8 +32,10 @@ export class AppComponent  {
         border: '5px solid red',
         height: '390',
         width: '640',
-        videoId: 'SQorLsOiu34',
-        playerVars: {'autoplay': 1, 'controls': 2},
+        playerVars: {
+          'autoplay': 1, 
+          'controls': 2
+          },
         events: {
           'onReady': this.onPlayerReady,
           'onStateChange': () => {
@@ -38,7 +46,7 @@ export class AppComponent  {
   }
 
   onPlayerReady(event) {
-    event.target.playVideo();
+    event.target.loadPlaylist({list : "PLxySa8Rx-er9SUSOEbDh1KwguS2y9BL_D", index : 0});
     document.getElementById('player').style.width = "120vh";
     document.getElementById('player').style.height = "68vh";
     document.getElementById('player').style.position = "fixed";
@@ -49,7 +57,7 @@ export class AppComponent  {
   
   playVideo() {
     this.player.playVideo();
-    document.getElementById('player').style.animationPlayState = "paused";
+    document.getElementById('player').style.animationPlayState = "running";
   }
 
   pauseVideo() {
@@ -57,12 +65,28 @@ export class AppComponent  {
     document.getElementById('player').style.animationPlayState = "paused";
   }
 
+  nextVideo() {
+    this.player.nextVideo();
+  }
+
+  previousVideo() {
+    this.player.previousVideo();
+  }
+
+  loopSet() {
+    this.loop = !this.loop;
+    this.player.setLoop(this.loop);
+  }
+
+  shuffleSet() {
+    this.shuffle = !this.shuffle;
+    this.player.setShuffle(this.shuffle);
+  }
+
   //===============================
   index = 0;
   
-  loop = true;
-
-  shuffle = false;
+  
 
   Playlist = 'https://www.youtube.com/playlist?list=PLxySa8Rx-er9SUSOEbDh1KwguS2y9BL_D';
 

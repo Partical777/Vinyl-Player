@@ -23,11 +23,11 @@
   <div id="video-placeholder"></div>
 
 
-  <a href="#" class="button next"></a>
-  <a href="#" class="button last"></a>
+  <a href="#" class="button next" (click)="nextVideo()"></a>
+  <a href="#" class="button last" (click)="previousVideo()"></a>
 
   <a href="#" class="button random" (click)="shuffle = !shuffle;GenerateURL()"></a>
-  <a href="#" class="button loop" (click)="loop = !loop;GenerateURL()"></a>
+  <a href="#" class="button loop" (click)="loopSet()"></a>
 
   <a href="#" id="play-button" class="button play" (click)="playVideo()"></a>
   <a href="#" id="pause-button" class="button stop" (click)="pauseVideo()"></a>
