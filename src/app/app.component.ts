@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'my-app',
@@ -11,6 +12,7 @@ export class AppComponent  {
   constructor(public sanitizer: DomSanitizer){}
 
   player;
+  subscription: Subscription;
 
   loop = true;
   shuffle = false;
@@ -44,6 +46,9 @@ export class AppComponent  {
         }
       });
     };
+
+    const source = interval(000);
+    this.subscription = source.subscribe(val => this.getTimeTimely());
   }
 
   onPlayerReady(event) {
@@ -88,9 +93,10 @@ export class AppComponent  {
     this.player.setVolume(this.volumn);
   }
 
-  getCurrentTime() {
+  getTimeTimely() {
     this.time = this.player.getCurrentTime()/this.player.getDuration()*100;
   }
+  
   changeCurrentTime(time){
     this.player.seekTo(time / 100 * this.player.getDuration());
     this.time = this.player.getCurrentTime()/this.player.getDuration()*100;
