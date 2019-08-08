@@ -49,10 +49,12 @@ export class AppComponent  {
   
   playVideo() {
     this.player.playVideo();
+    document.getElementById('player').style.animationPlayState = "paused";
   }
 
   pauseVideo() {
     this.player.pauseVideo();
+    document.getElementById('player').style.animationPlayState = "paused";
   }
 
   //===============================
