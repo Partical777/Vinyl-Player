@@ -213,21 +213,19 @@ input{
 
 
 /* Slider */
-.slidecontainer {
-  width: 100%; /* Width of the outside container */
-}
 
-.slider {
-  z-index: 10;
+
+.sliderDutation {
+  position: absolute;
   -webkit-appearance: none;
   height: 15px;
+  width: 700px;
   border-radius: 5px;   
   background: #ffffff;
   outline: none;
-  transform: rotate(-90deg);
-  margin-left: 80%;
+  bottom: 7%;
 }
-.slider::-webkit-slider-thumb {
+.sliderDutation::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 35px;
@@ -236,7 +234,35 @@ input{
   background: #00ff9f;
   cursor: pointer;
 }
-.slider::-moz-range-thumb {
+.sliderDutation::-moz-range-thumb {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #00ff9f;
+  cursor: pointer;
+}
+
+.sliderVloumn {
+  position: absolute;
+  -webkit-appearance: none;
+  height: 15px;
+  width: 350px;
+  border-radius: 5px;   
+  background: #ffffff;
+  outline: none;
+  transform: rotate(-90deg);
+  right: 0;
+}
+.sliderVloumn::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%; 
+  background: #00ff9f;
+  cursor: pointer;
+}
+.sliderVloumn::-moz-range-thumb {
   width: 35px;
   height: 35px;
   border-radius: 50%;

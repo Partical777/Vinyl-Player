@@ -16,6 +16,7 @@ export class AppComponent  {
   shuffle = false;
 
   volumn = 50;
+  time = 0;
 
 
   ngAfterViewInit() {
@@ -85,6 +86,15 @@ export class AppComponent  {
 
   changeVolumn() {
     this.player.setVolume(this.volumn);
+  }
+
+  getCurrentTime() {
+    this.time = this.player.getCurrentTime()/this.player.getDuration()*100;
+  }
+  changeCurrentTime(time){
+    this.player.seekTo(time / 100 * this.player.getDuration());
+    this.time = this.player.getCurrentTime()/this.player.getDuration()*100;
+    console.log(this.player.getCurrentTime()/this.player.getDuration()*100);
   }
 
   //===============================

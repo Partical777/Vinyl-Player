@@ -32,7 +32,9 @@
   <a href="#" id="play-button" class="button play" (click)="playVideo()"></a>
   <a href="#" id="pause-button" class="button stop" (click)="pauseVideo()"></a>
 
-  <div class="slidecontainer">
-    <input type="range" min="1" max="100" [(ngModel)]="volumn" class="slider" id="myRange" (ngModelChange)="changeVolumn()">
-  </div>
+
+  <input type="range" min="1" max="100" [(ngModel)]="time" class="sliderDutation" (ngModelChange)="changeCurrentTime(time)">
+  
+  <input type="range" min="1" max="100" [(ngModel)]="volumn" class="sliderVloumn" (ngModelChange)="changeVolumn()">
+
 </div>
