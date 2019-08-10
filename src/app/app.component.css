@@ -225,7 +225,7 @@ input{
   position: absolute;
   -webkit-appearance: none;
   height: 15px;
-  width: 700px;
+  width: 35%;
   border-radius: 5px;   
   background: #ffffff;
   outline: none;
@@ -252,7 +252,7 @@ input{
   position: absolute;
   -webkit-appearance: none;
   height: 15px;
-  width: 350px;
+  width: 20%;
   border-radius: 5px;   
   background: #ffffff;
   outline: none;
