@@ -48,7 +48,8 @@ export class AppComponent  {
         width: '640',
         playerVars: {
           'autoplay': 1, 
-          'controls': 2
+          'controls': 2,
+          'cc_load_policy': 0,
           },
         events: {
           'onReady': this.onPlayerReady,
